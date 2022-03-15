@@ -1,0 +1,936 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "privacy manager",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "HelloWorldIntent",
+          "slots": [],
+          "samples": [
+            "hello",
+            "how are you",
+            "say hi world",
+            "say hi",
+            "hi",
+            "say hello world",
+            "say hello"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "ReadFile",
+          "slots": [
+            {
+              "name": "name",
+              "type": "AMAZON.FirstName"
+            }
+          ],
+          "samples": [
+            "read file {name}",
+            "read file"
+          ]
+        },
+        {
+          "name": "Login",
+          "slots": [
+            {
+              "name": "user_name",
+              "type": "AMAZON.FirstName",
+              "samples": [
+                "sign onto {user_name}",
+                "log onto {user_name}",
+                "sign into {user_name}",
+                "log into {user_name}",
+                "{user_name}"
+              ]
+            }
+          ],
+          "samples": [
+            "log on to me as {user_name}",
+            "sign me as {user_name}",
+            "log in with {user_name}",
+            "log in as {user_name}",
+            "sign me in as {user_name}",
+            "log onto {user_name}",
+            "sign onto {user_name}",
+            "sign into {user_name}",
+            "log into {user_name}"
+          ]
+        },
+        {
+          "name": "CreateNewUser",
+          "slots": [
+            {
+              "name": "user_name",
+              "type": "AMAZON.FirstName",
+              "samples": [
+                "{user_name}",
+                "I want my username to be {user_name}",
+                "you may call me {user_name}",
+                "you can call me {user_name}",
+                "Call me {user_name}"
+              ]
+            }
+          ],
+          "samples": [
+            "create a new user {user_name}",
+            "make a new user {user_name}",
+            "create user {user_name}",
+            "create new user {user_name}",
+            "make a new user named {user_name}",
+            "sign up as {user_name}",
+            "create a new user named {user_name}"
+          ]
+        },
+        {
+          "name": "Logout",
+          "slots": [],
+          "samples": [
+            "sign me out",
+            "log me out",
+            "log out",
+            "sign out"
+          ]
+        },
+        {
+          "name": "MakeRequest",
+          "slots": [
+            {
+              "name": "user_name",
+              "type": "AMAZON.FirstName",
+              "samples": [
+                "Request permission from {user_name}",
+                "Request access to {user_name}  recordings",
+                "Ask for access to {user_name} recordings",
+                "I\u0027d like to get access from {user_name}",
+                "I want to ask {user_name} for permission",
+                "I want to ask {user_name} for access",
+                "{user_name}"
+              ]
+            },
+            {
+              "name": "request_type",
+              "type": "RequestType",
+              "samples": [
+                "Access to {request_type} from their recordings",
+                "I\u0027d like to {request_type} their recordings",
+                "I want to {request_type} using their recordings",
+                "I want to {request_type} to their recordings",
+                "{request_type}"
+              ]
+            },
+            {
+              "name": "reason",
+              "type": "RequestReason",
+              "samples": [
+                "I am on a {reason} team",
+                "For a {reason} project",
+                "I have a {reason} project I want their recordings for",
+                "For {reason} applications",
+                "{reason} purposes",
+                "I want to access their recordings for {reason} purposes",
+                "I am a {reason}",
+                "{reason}"
+              ]
+            }
+          ],
+          "samples": [
+            "three",
+            "request access from a user",
+            "ask {user_name} for permission to {request_type} with their recordings for {reason} purposes",
+            "ask {user_name} for permission to {request_type} with their recordings",
+            "ask permission to {request_type} using recordings from {user_name} for {reason} purposes",
+            "request permission to {request_type} using {user_name}  recordings for {reason} purposes",
+            "request access to recordings from {user_name} for {reason} purposes",
+            "ask {user_name} for permission to use their recordings",
+            "request access to recordings from user {user_name} ",
+            "demand access to recordings from another user",
+            "demand access rights to someone\u0027s recordings",
+            "request access rights to a user\u0027s recordings",
+            "make an access request for a user\u0027s recordings",
+            "ask for permission to access another user\u0027s recordings",
+            "request access to recordings from another user"
+          ]
+        },
+        {
+          "name": "AddRecording",
+          "slots": [
+            {
+              "name": "file_name",
+              "type": "FileName",
+              "samples": [
+                "Add {file_name}",
+                "{file_name}"
+              ]
+            }
+          ],
+          "samples": [
+            "move {file_name} to my recordings",
+            "add {file_name} to my recordings"
+          ]
+        },
+        {
+          "name": "ListRequests",
+          "slots": [],
+          "samples": [
+            "one",
+            "list pending requests",
+            "List my requests",
+            "What are my current requests"
+          ]
+        },
+        {
+          "name": "PlayRecording",
+          "slots": [
+            {
+              "name": "file_name",
+              "type": "FileName"
+            }
+          ],
+          "samples": [
+            "Play {file_name}",
+            "Play my {file_name} recording"
+          ]
+        },
+        {
+          "name": "AMAZON.PauseIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.ResumeIntent",
+          "samples": []
+        },
+        {
+          "name": "HasAccess",
+          "slots": [
+            {
+              "name": "user_name",
+              "type": "AMAZON.FirstName",
+              "samples": [
+                "recordings from {user_name}",
+                "check for access to recordings from {user_name}",
+                "{user_name}"
+              ]
+            }
+          ],
+          "samples": [
+            "seven",
+            "list access permissions from a specific user",
+            "what can i access from {user_name}",
+            "did {user_name} give me access",
+            "can i use recordings from {user_name}",
+            "has {user_name} granted me access",
+            "does {user_name} allow me to use any of their recordings",
+            "do i have access to anything from {user_name}"
+          ]
+        },
+        {
+          "name": "AllAccess",
+          "slots": [],
+          "samples": [
+            "two",
+            "list the files i have access to",
+            "can you list me all of the permissions",
+            "review my access permissions",
+            "list all files i can access",
+            "what files do i have access to",
+            "who do I have access to",
+            "list all access permissions"
+          ]
+        },
+        {
+          "name": "RevokeAccess",
+          "slots": [
+            {
+              "name": "user_name",
+              "type": "AMAZON.FirstName"
+            },
+            {
+              "name": "request_type",
+              "type": "RequestType"
+            },
+            {
+              "name": "reason",
+              "type": "RequestReason"
+            }
+          ],
+          "samples": [
+            "six",
+            "revoke access from a user",
+            "revoke {user_name} access",
+            "remove {user_name} access",
+            "revoke access from {user_name} for {reason} projects",
+            "forbid {user_name} from {request_type} access for {reason} purposes",
+            "forbid {user_name} from access for {reason} projects",
+            "revoke {request_type} access from {user_name}",
+            "forbid {user_name} from {request_type} access",
+            "revoke access from {user_name}"
+          ]
+        },
+        {
+          "name": "ListFiles",
+          "slots": [],
+          "samples": [
+            "view recordings",
+            "list recordings",
+            "list files",
+            "view files",
+            "view my files",
+            "List my files"
+          ]
+        },
+        {
+          "name": "ListPreferences",
+          "slots": [],
+          "samples": [
+            "eight",
+            "list all access given",
+            "list all access granted",
+            "list all permissions given",
+            "list all permissions granted"
+          ]
+        },
+        {
+          "name": "DenyRequest",
+          "slots": [
+            {
+              "name": "user_name",
+              "type": "AMAZON.FirstName",
+              "samples": [
+                "reject {user_name}",
+                "deny {user_name}",
+                "{user_name}"
+              ]
+            }
+          ],
+          "samples": [
+            "reject request from {user_name}",
+            "deny request from {user_name}",
+            "deny request from a user",
+            "five"
+          ]
+        },
+        {
+          "name": "AcceptRequest",
+          "slots": [
+            {
+              "name": "user_name",
+              "type": "AMAZON.FirstName",
+              "samples": [
+                "{user_name}"
+              ]
+            },
+            {
+              "name": "file_name",
+              "type": "FileName",
+              "samples": [
+                "{file_name}"
+              ]
+            }
+          ],
+          "samples": [
+            "grant access to {user_name}",
+            "four",
+            "accept request from {user_name}",
+            "accept request from {user_name} for {file_name}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "copy",
+                "synonyms": [
+                  "duplicate"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "listen",
+                "synonyms": [
+                  "hear"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "transcribe",
+                "synonyms": [
+                  "translate",
+                  "convert to text"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "train artificial intelligence",
+                "synonyms": [
+                  "train machine learning models",
+                  "train M.L.",
+                  "train A.I.",
+                  "train machine learning algorithms"
+                ]
+              }
+            }
+          ],
+          "name": "RequestType"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "commercial",
+                "synonyms": [
+                  "corporate",
+                  "business",
+                  "professional",
+                  "enterprise"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "personal",
+                "synonyms": [
+                  "private"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "research",
+                "synonyms": [
+                  "professor",
+                  "researcher",
+                  "R and D",
+                  "R \u0026 D",
+                  "developing",
+                  "development",
+                  "experiment",
+                  "testing",
+                  "test",
+                  "experimental",
+                  "researching",
+                  "university"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "student",
+                "synonyms": [
+                  "teacher",
+                  "educational",
+                  "education",
+                  "teaching",
+                  "comprehension",
+                  "learning"
+                ]
+              }
+            }
+          ],
+          "name": "RequestReason"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "all files"
+              }
+            },
+            {
+              "name": {
+                "value": "weather"
+              }
+            },
+            {
+              "name": {
+                "value": "weather.m4a"
+              }
+            },
+            {
+              "name": {
+                "value": ".m4a"
+              }
+            },
+            {
+              "name": {
+                "value": "weather02.m4a"
+              }
+            },
+            {
+              "name": {
+                "value": "weather01.m4a"
+              }
+            }
+          ],
+          "name": "FileName"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "Login",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "user_name",
+              "type": "AMAZON.FirstName",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1313647824547.596563069666"
+              }
+            }
+          ]
+        },
+        {
+          "name": "CreateNewUser",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "user_name",
+              "type": "AMAZON.FirstName",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1126685076378.911037741921"
+              }
+            }
+          ]
+        },
+        {
+          "name": "MakeRequest",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "user_name",
+              "type": "AMAZON.FirstName",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1191667548766.706906108416"
+              }
+            },
+            {
+              "name": "request_type",
+              "type": "RequestType",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1191667548766.497903671082"
+              }
+            },
+            {
+              "name": "reason",
+              "type": "RequestReason",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1191667548766.1335428480518"
+              }
+            }
+          ]
+        },
+        {
+          "name": "AddRecording",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "file_name",
+              "type": "FileName",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.909367053659.1314487109372"
+              }
+            }
+          ]
+        },
+        {
+          "name": "HasAccess",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "user_name",
+              "type": "AMAZON.FirstName",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1093887183430.430471118988"
+              }
+            }
+          ]
+        },
+        {
+          "name": "RevokeAccess",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "user_name",
+              "type": "AMAZON.FirstName",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1477311528047.675006233419"
+              }
+            },
+            {
+              "name": "request_type",
+              "type": "RequestType",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "reason",
+              "type": "RequestReason",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ]
+        },
+        {
+          "name": "DenyRequest",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "user_name",
+              "type": "AMAZON.FirstName",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.61136336840.649638984072"
+              }
+            }
+          ]
+        },
+        {
+          "name": "AcceptRequest",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "user_name",
+              "type": "AMAZON.FirstName",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.374575711701.650054464151"
+              }
+            },
+            {
+              "name": "file_name",
+              "type": "FileName",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.374575711701.154579329398"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.1313647824547.596563069666",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Can you repeat the user name you said?"
+          },
+          {
+            "type": "PlainText",
+            "value": "What was the user name you said?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Slot.1313647824547.596563069666",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "I\u0027m hearing {user_name} . Is that right?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1126685076378.911037741921",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Would you please restate your desired username?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Sorry, what did you want your username to be?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Slot.1126685076378.911037741921",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "I heard the name {user_name} , was that correct?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1191667548766.706906108416",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Who do you want to ask permission from?"
+          },
+          {
+            "type": "PlainText",
+            "value": "What\u0027s the name of the user from whom you\u0027d like to request access?"
+          },
+          {
+            "type": "PlainText",
+            "value": "To which user\u0027s recordings are you requesting access?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Who are you requesting permission from?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1191667548766.497903671082",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Would you want to copy, listen, transcribe, or train artificial intelligence using their recordings?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1191667548766.1335428480518",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Would you best describe yourself as a private entity, student, teacher, researcher, or commercial entity?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Is the work you intend to use these recordings for personal, educational, research-related, or commercial?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.909367053659.1314487109372",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Which recording would you like to add?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.46556152249.325028952513",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What permissions do you wish to grant?"
+          },
+          {
+            "type": "PlainText",
+            "value": "What kind of access would you like to give?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.46556152249.875235387954",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What\u0027s the name of the person you want to give permissions to?"
+          },
+          {
+            "type": "PlainText",
+            "value": "To which user are you giving access?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Who are you wanting to grant access to?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.46556152249.858809148215",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "For what kinds of projects should they be allowed access?"
+          },
+          {
+            "type": "PlainText",
+            "value": "For what purposes are you licensing their access?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.46556152249.994742803619",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "State the file name you would like them to have access, or say \u0027all files\u0027."
+          },
+          {
+            "type": "PlainText",
+            "value": "Say which file you want them to have access to, or say \u0027all files\u0027."
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1372737036194.1092414690858",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Whose request would you like to resolve?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1372737036194.639338204497",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What sort of permissions are you rejecting?"
+          },
+          {
+            "type": "PlainText",
+            "value": "What kind of access are you denying?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1372737036194.429123782752",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "For which kind of use are you rejecting access?"
+          },
+          {
+            "type": "PlainText",
+            "value": "For what kind of project are you denying access from this user?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1093887183430.430471118988",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Which user do you want me to check?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Whose recordings are you wanting to check for access?"
+          },
+          {
+            "type": "PlainText",
+            "value": "You want me to see if you have access to whose files?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1477311528047.675006233419",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Revoke access from which user?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Forbid who from access?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Who do you want to forbid access from your data?"
+          },
+          {
+            "type": "PlainText",
+            "value": "From whom would you like to revoke access?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.258427925537.962521169041",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Do you accept or deny this request?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Please say that you either \u0027accept\u0027 or \u0027deny\u0027 this request."
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.61136336840.649638984072",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Whose request would you like to reject?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.374575711701.650054464151",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Whose request would you like to accept?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.374575711701.154579329398",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "To which file would you like to grant them access, otherwise say \u0027all files\u0027?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "27"
+}

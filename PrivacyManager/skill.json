@@ -1,0 +1,61 @@
+{
+  "manifest": {
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:us-west-2:738104454357:function:97dd21dd-52df-4359-8bd9-58c3c442e46e:Release_0"
+        },
+        "interfaces": [
+          {
+            "type": "AUDIO_PLAYER"
+          }
+        ],
+        "regions": {
+          "NA": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-east-1:738104454357:function:97dd21dd-52df-4359-8bd9-58c3c442e46e:Release_0"
+            }
+          },
+          "EU": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:eu-west-1:738104454357:function:97dd21dd-52df-4359-8bd9-58c3c442e46e:Release_0"
+            }
+          },
+          "FE": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-west-2:738104454357:function:97dd21dd-52df-4359-8bd9-58c3c442e46e:Release_0"
+            }
+          }
+        }
+      }
+    },
+    "manifestVersion": "1.0",
+    "privacyAndCompliance": {
+      "locales": {
+        "en-US": {}
+      }
+    },
+    "publishingInformation": {
+      "automaticDistribution": {
+        "isActive": false
+      },
+      "category": "EDUCATION_AND_REFERENCE",
+      "distributionCountries": [],
+      "isAvailableWorldwide": true,
+      "locales": {
+        "en-US": {
+          "description": "Grant or deny access to your files, or request access to another user\u0027s files.",
+          "examplePhrases": [
+            "Alexa open privacy manager",
+            "list all access",
+            "help"
+          ],
+          "keywords": [],
+          "name": "Privacy Manager",
+          "summary": "Manage access to your recordings entirely by voice!"
+        }
+      },
+      "testingInstructions": "Sample Testing Instructions."
+    }
+  }
+}
