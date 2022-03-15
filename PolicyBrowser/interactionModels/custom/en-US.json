@@ -1,0 +1,310 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "policy browser",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "ListOptions",
+          "slots": [],
+          "samples": [
+            "menu",
+            "one list options",
+            "one",
+            "list options"
+          ]
+        },
+        {
+          "name": "TableOfContents",
+          "slots": [],
+          "samples": [
+            "hear the table of contents",
+            "two hear the table of contents",
+            "two",
+            "table of contents"
+          ]
+        },
+        {
+          "name": "StartFromBeginning",
+          "slots": [],
+          "samples": [
+            "read from beginning",
+            "three",
+            "three start from the beginning",
+            "start from the beginning",
+            "three start from beginning",
+            "start from beginning"
+          ]
+        },
+        {
+          "name": "StartFromSection",
+          "slots": [
+            {
+              "name": "num",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "section {num}",
+                "{num} "
+              ]
+            }
+          ],
+          "samples": [
+            "four read section {num}",
+            "four read section",
+            "read section {num}",
+            "read section",
+            "four",
+            "four start from section",
+            "start from section"
+          ]
+        },
+        {
+          "name": "Continue",
+          "slots": [],
+          "samples": [
+            "five skip section",
+            "five skip",
+            "five continue from last session",
+            "five continue",
+            "five",
+            "skip section",
+            "skip",
+            "continue from last session",
+            "continue"
+          ]
+        },
+        {
+          "name": "RepeatWhileReading",
+          "slots": [
+            {
+              "name": "repeatThis",
+              "type": "repeatThis"
+            }
+          ],
+          "samples": [
+            "repeat",
+            "repeat {repeatThis}",
+            "six",
+            "six repeat",
+            "six repeat {repeatThis}"
+          ]
+        },
+        {
+          "name": "AcceptPolicy",
+          "slots": [
+            {
+              "name": "userAcceptence",
+              "type": "userAcceptence",
+              "samples": [
+                "{userAcceptence} section",
+                "{userAcceptence}"
+              ]
+            },
+            {
+              "name": "acceptNum",
+              "type": "AMAZON.NUMBER"
+            },
+            {
+              "name": "acceptWhat",
+              "type": "acceptWhat"
+            }
+          ],
+          "samples": [
+            "seven {userAcceptence} section {acceptNum}",
+            "{userAcceptence} section {acceptNum}",
+            "seven {userAcceptence} {acceptWhat}",
+            "seven {userAcceptence} {acceptNum}",
+            "seven {userAcceptence} section",
+            "seven {userAcceptence}",
+            "{userAcceptence} {acceptWhat}",
+            "{userAcceptence} {acceptNum}",
+            "{userAcceptence} section",
+            "{userAcceptence}"
+          ]
+        },
+        {
+          "name": "readAccepted",
+          "slots": [],
+          "samples": [
+            "Eight Accepted sections",
+            "Eight What sections have I accepted",
+            "Eight What are my accepted sections",
+            "Eight",
+            "Accepted sections",
+            "What sections have I accepted",
+            "What are my accepted sections"
+          ]
+        },
+        {
+          "name": "Reset",
+          "slots": [],
+          "samples": [
+            "Erase all data"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "section"
+              }
+            },
+            {
+              "name": {
+                "value": "paragraph"
+              }
+            }
+          ],
+          "name": "repeatThis"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "section"
+              }
+            },
+            {
+              "name": {
+                "value": "paragraph"
+              }
+            }
+          ],
+          "name": "skipThis"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "decline"
+              }
+            },
+            {
+              "name": {
+                "value": "accept"
+              }
+            }
+          ],
+          "name": "userAcceptence"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "all sections"
+              }
+            },
+            {
+              "name": {
+                "value": "all"
+              }
+            }
+          ],
+          "name": "acceptWhat"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "StartFromSection",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "num",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.946384904213.16021051314"
+              }
+            }
+          ]
+        },
+        {
+          "name": "AcceptPolicy",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "userAcceptence",
+              "type": "userAcceptence",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.787348945197.473150203012"
+              }
+            },
+            {
+              "name": "acceptNum",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "acceptWhat",
+              "type": "acceptWhat",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.946384904213.16021051314",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What section number would you like to read?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1123545364423.1474617330182",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Would you like to skip the paragraph or section?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.787348945197.473150203012",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Would you like to accept or decline this section of the policy?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "24"
+}
